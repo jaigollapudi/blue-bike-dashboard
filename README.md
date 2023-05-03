@@ -15,16 +15,17 @@ To run the application, you need to install the following libraries:
 - **dash_bootstrap_components:** For using Bootstrap components to style the dashboard
 - **plotly.express:** For user selected visualizations
 - **plotly.graph_objects:** For user selected visualizations
+- **os:** Used to get the current working directory
 
 You can install these libraries by running the following command in your terminal:
 
 ```
-pip install pandas dash folium dash_bootstrap_components plotly
+pip install pandas dash folium dash_bootstrap_components plotly os
 ```
 
 ## Files
 
-- **bluebikes_tripdata_2020.csv:** The dataset used in the dashboard
+- **bluebikes_tripdata_2020.csv:** The dataset used in the dashboard was downloaded from [Kaggle](https://www.kaggle.com/datasets/jackdaoud/bluebikes-in-boston?select=bluebikes_tripdata_2020.csv). REMINDER: Please ensure that the downloaded 'bluebikes_tripdata_2020.csv' file is in the same current workng directory as your python script
 - **main.py:** The Python code for the dashboard
 - **README.md:** This README file
 
