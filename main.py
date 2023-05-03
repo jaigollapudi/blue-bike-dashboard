@@ -10,6 +10,7 @@ import plotly.graph_objects as go
 pd.set_option('display.max_rows', None)
 
 
+
 # Read the CSV file
 df = pd.read_csv('/Users/jaigollapudi/Downloads/blue-bike-dashboard/bluebikes_tripdata_2020.csv', low_memory=False)
 df['starttime'] = pd.to_datetime(df['starttime'])
@@ -54,6 +55,7 @@ def create_map(df_data_filtered):
         ride_line.add_to(m)
 
     return m
+
 
 
 app.layout = html.Div([
@@ -168,7 +170,7 @@ def update_visualization(selected_visualization):
     if selected_visualization == 'monthly-trend':
         monthly_data = df_data.groupby(df_data['starttime'].dt.to_period('M').astype('datetime64[ns]')).size().reset_index(name='trips')
         fig = px.line(monthly_data, x='starttime', y='trips', title='Monthly Trend Analysis')
-        fig.update_layout(xaxis_title='Number of Trips',
+        fig.update_layout(xaxis_title='Month',
                           yaxis_title='Number of Trips')
 
     elif selected_visualization == 'trip-duration':
@@ -221,8 +223,6 @@ def update_visualization(selected_visualization):
 
 
 
-
-
 @app.callback(
     [Output('starttime-picker', 'min_date_allowed'),
      Output('starttime-picker', 'max_date_allowed')],
@@ -266,4 +266,7 @@ def update_map(selected_start_station, start_date, end_date):
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
+
+
 
