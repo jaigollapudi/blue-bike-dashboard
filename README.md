@@ -13,17 +13,18 @@ To run the application, you need to install the following libraries:
 - **dash.dependencies:** For handling user input and updating the dashboard output
 - **dash_bootstrap_components:** For using Bootstrap components to style the dashboard
 
+You can install these libraries by running the following command in your terminal:
+
+```
+pip install pandas dash folium dash_bootstrap_components
+```
+
 ## Files
 
 - **bluebikes_tripdata_2020.csv:** The dataset used in the dashboard
 - **app.py:** The Python code for the dashboard
 - **README.md:** This README file
 
-You can install these libraries by running the following command in your terminal:
-
-```
-pip install pandas dash folium dash_bootstrap_components
-```
 
 ## How to Use the App
 
