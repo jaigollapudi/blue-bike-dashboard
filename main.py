@@ -14,10 +14,18 @@ from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 import plotly.express as px
 import plotly.graph_objects as go
+import os
 
+
+# Getting the current working directory
+cwd = os.getcwd()
+
+# Joining the path with the filename
+file_path = os.path.join(cwd, 'bluebikes_tripdata_2020.csv')
 
 # Reading the CSV file
-df_data = pd.read_csv('/Users/jaigollapudi/Downloads/blue-bike-dashboard/bluebikes_tripdata_2020.csv', low_memory=False)
+df_data = pd.read_csv(file_path, low_memory=False)
+
 # Converting the start and stop times to datetime format
 df_data['starttime'] = pd.to_datetime(df_data['starttime'])
 df_data['stoptime'] = pd.to_datetime(df_data['stoptime'])
